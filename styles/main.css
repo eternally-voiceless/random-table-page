@@ -5,7 +5,11 @@
     box-sizing: border-box;
 }
 
-html, head, body{
+html, head, body, div, a, h1, h2, button, table, tr, th, td, thead, tbody, tfoot, footer{
     font-size: 100%;
+    margin: 0%;
+    padding: 0%;
+    border: 0em;
+    vertical-align: baseline;
 }
 
