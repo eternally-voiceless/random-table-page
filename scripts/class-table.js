@@ -3,16 +3,18 @@ class Table{
         this._rows=rows;
         this._columns=columns;
         
-        this.table=document.createElement('table');
+        let table=document.createElement('table');
         if(caption) table.createCaption().append(caption);
-        for(let r=0; r<rows; ++r){
+        for(let r=0; r<this.rows; ++r){
             let row=document.createElement('tr');
-            this.table.append(row);
-            for(let c=0; c<columns; ++c){
+            table.append(row);
+            for(let c=0; c<this.columns; ++c){
                 let cell=document.createElement('td');
-                this.table.lastElementChild.append(cell);
+                table.lastElementChild.append(cell);
             }
         }
+
+        this.table=table;
     }
     get rows(){
         return this._rows;
@@ -21,9 +23,10 @@ class Table{
         return this._columns;
     }
 
-    async print(position="left: 32em; top: 12em;"){
-        [this.table.style.left, this.table.style.top]=position.split('; ');
-        this.table.style.left+=';';
+    async print(positionLeft, positionTop){
+        this.table.style.position='absolute';
+        this.table.style.left=positionLeft;
+        this.table.style.top=positionTop;
 
         document.body.append(this.table);
 
@@ -44,6 +47,6 @@ class Table{
 }
 
 //Here's a simple testing below
-/*let test=new Table(5, 5, 'base');
+let test=new Table(5, 5, 'base');
 
-test.print("left: 20em; top: 32em;").then(result=>Table.populateByRandom(result.table, result.rows, result.columns));*/
+test.print("20em", "32em").then(result=>Table.populateByRandom(result.table, result.rows, result.columns));
