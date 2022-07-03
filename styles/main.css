@@ -25,22 +25,6 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-table{
-    border-collapse: separate;
-    border-spacing: .5em;
-    table-layout: fixed;
-}
-table tbody{
-    height: 4em;
-}
-
-td{
-    width: 8em;
-    padding: .2em;
-    margin: .2em;
-    margin-left: 1em;
-}
-
 .header{
     position: fixed;
     top: 0%;
