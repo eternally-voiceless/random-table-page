@@ -1,18 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Gulzar&display=swap');
+
+@font-face {
+    font-family: 'Gulzar', serif;
+    src: url('https://fonts.googleapis.com/css2?family=Gulzar&display=swap');
+    font-weight: 400;
+    font-style: normal;
+}
+
 *{
-    margin: 0;
-    padding: 0;
-    border: 0;
     box-sizing: border-box;
 }
 
-html, head, body, div, a, h1, h2, button, table, tr, th, td, thead, tbody, tfoot, footer{
+html, head, body, div, button, a, h1, h2, table, tr, th, td, thead, tbody, tfoot, footer{
     font-size: 100%;
     margin: 0%;
     padding: 0%;
     border: 0em;
     vertical-align: baseline;
-
-    background-color: whitesmoke;
-    color: black;
 }
 
+body{
+    height: 1200px;
+    background-color: antiquewhite;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+table{
+    border-collapse: separate;
+    border-spacing: .5em;
+    table-layout: fixed;
+}
+table tbody{
+    height: 4em;
+}
+
+td{
+    width: 8em;
+    padding: .2em;
+    margin: .2em;
+    margin-left: 1em;
+}
+
+.header{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    z-index: 100;
+
+    min-height: 8em;
+    border: 2px groove rgb(200, 155, 90);
+    border-bottom-left-radius: 0.4em;
+    border-bottom-right-radius: 0.4em;
+
+    background-color: rgb(255, 215, 130);
+    box-shadow: .1em .1em .3em burlywood;
+
+    font-size: 1.2em;
+}
+
+.header h1{
+    display: block;
+    min-height: 1em;
+    padding: 0em 0em;
+    margin: 0;
+    border-bottom: 1px groove rgb(200, 155, 90);
+
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-size: 1.4em;
+    font-family: 'Gulzar', serif;
+}
+
+.header p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-indent: 5em;
+
+    padding: 0.4em 0%;
+    margin: 0%;
+}
+
+.header ul {
+    list-style-type: circle;
+    padding: 0%;
+    margin: 0%;
+}
+
+.header ul li{
+    list-style-position: inside;
+    text-indent: 7em;
+}
+
+.menu{
+    display: block;
+    position: fixed;
+    top: 16em;
+    left: 1em;
+    /*height: 4.2em;*/
+    z-index: 100;
+    padding: 0;
+    
+    border: 1px groove rgb(200, 155, 90);
+    border-radius: 0.4em;
+    background-color: rgb(255, 215, 130);
+    box-shadow: .1em .1em .3em burlywood;
+}
+
+.menu button{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.4em;
+}
+
+.button1, .button2{
+    height: 2.6em;
+    width: 5em;
+
+    /*border: 1px outset rgb(200, 155, 90);*/
+    border-bottom: 1px solid rgb(200, 155, 90);
+    border-right: 1px solid rgb(200, 155, 90);
+    border-radius: 0.6em;
+    margin-top: .4em;
+    margin-bottom: .2em;
+
+    transition-duration: 500ms;
+    background-color: antiquewhite;
+}
+
+.button1{
+    display: block;
+    float: left;
+
+    margin-left: .6em;
+    margin-right: .2em;
+}
+
+.button2{
+    display: block;
+
+    margin-left: .2em;
+    margin-right: .6em;
+}
+
+.button1:hover, .button2:hover{
+    background-color: white;
+}
+
+.button1:active, .button2:active{
+    border-bottom: 0;
+    border-right: 0;
+    border-top: 1px solid rgb(200, 155, 90);
+    border-left: 1px solid rgb(200, 155, 90);
+}
