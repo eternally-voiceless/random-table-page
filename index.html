@@ -4,6 +4,8 @@
         <meta charset="utf-8" >
         <title>Create Table with Random Numbers</title>
         <link rel="stylesheet" href="styles/main.css">
+        
+        <script defer src="scripts/loadScript.js"></script>
 
     </head>
     <body>
@@ -27,8 +29,8 @@
             </header>
         </div>
         <div class="menu">
-            <button class="button1" :hover>Create Table</button>
-            <button class="button2" :hover>Remove Table</button>
+            <button id="create-table" class="button1" :hover onclick="createTable()">Create Table</button>
+            <button id="delete-table" class="button2" :hover onclick="deleteTable()">Delete Table</button>
         </div>
     </body>
 </html>

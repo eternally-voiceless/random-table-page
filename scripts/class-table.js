@@ -1,5 +1,5 @@
 class Table{
-    constructor(rows=5, columns=5, id='base', caption=undefined){
+    constructor(rows=5, columns=5, caption=undefined){
         this._rows=rows;
         this._columns=columns;
         
@@ -13,6 +13,7 @@ class Table{
                 table.lastElementChild.append(cell);
             }
         }
+        table.id='table';
 
         this.table=table;
     }
@@ -47,6 +48,39 @@ class Table{
 }
 
 //Here's a simple testing below
-let test=new Table(5, 5, 'base');
+//let test=new Table(15, 25);
 
-test.print("20em", "32em").then(result=>Table.populateByRandom(result.table, result.rows, result.columns));
+//test.print("35em", "18em").then(result=>Table.populateByRandom(result.table, result.rows, result.columns));
+
+function createInstance(rows, columns, x_coordinate, y_coordinate){
+    let table=new Table(rows, columns);
+    table.print(x_coordinate, y_coordinate).then(output=>{
+        Table.populateByRandom(output.table, output.rows, output.columns);
+        console.log('Table created!');
+    })
+}
+
+function createTable(){
+    if(!document.getElementById('table')){
+        createInstance(18, 32, '35em', '18em');
+        document.getElementById('create-table').id='refresh-table';
+        document.getElementById('refresh-table').innerText='Refresh Table';
+    }
+    else if(document.getElementById('refresh-table')){
+        deleteTable();
+        createTable();
+    }
+}
+
+function deleteTable(){
+    if(document.getElementById('table')) {
+        document.getElementById('table').remove();
+        console.log('Table removed!');
+    }
+    
+    if(document.getElementById('refresh-table')){
+        document.getElementById('refresh-table').id='create-table';
+        document.getElementById('create-table').innerText='Create Table';
+    }
+}
+
