@@ -42,6 +42,8 @@ body{
 
     min-height: 8em;
     border: 2px groove #212529;
+    border-left: 0;
+    border-top: 0;
     border-bottom-left-radius: 0.4em;
     border-bottom-right-radius: 0.4em;
 
@@ -90,7 +92,7 @@ body{
 .menu{
     display: block;
     position: fixed;
-    top: 16em;
+    top: 13em;
     left: 1em;
     /*height: 4.2em;*/
     z-index: 100;
