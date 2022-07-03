@@ -25,14 +25,18 @@ class Table{
     }
 
     async print(positionLeft, positionTop){
-        this.table.style.position='absolute';
-        this.table.style.left=positionLeft;
-        this.table.style.top=positionTop;
+        let table=this.table;
+        table.style.position='absolute';
+        table.style.left=positionLeft;
+        table.style.top=positionTop;
+        table.className='for_table';
+        document.body.append(table);
 
-        document.body.append(this.table);
-
-        return await new Promise(resolve=>{
-            setTimeout(() => resolve({table: this.table, rows: this.rows, columns: this.columns}), 0);
+        return await new Promise(resolve=>{    
+            setTimeout(() => {
+                table.style.opacity='1';
+                resolve({table: this.table, rows: this.rows, columns: this.columns});
+            }, 0);
         });
     }
 
@@ -58,11 +62,12 @@ function createInstance(rows, columns, x_coordinate, y_coordinate){
         Table.populateByRandom(output.table, output.rows, output.columns);
         console.log('Table created!');
     })
+
 }
 
 function createTable(){
     if(!document.getElementById('table')){
-        createInstance(18, 32, '35em', '18em');
+        createInstance(20, 32, '17.5em', '13em');
         document.getElementById('create-table').id='refresh-table';
         document.getElementById('refresh-table').innerText='Refresh Table';
     }
