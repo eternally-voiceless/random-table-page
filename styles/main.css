@@ -1,3 +1,6 @@
+/*Color palettes were taken from:*/
+/*https://coolors.co/palette/f8f9fa-e9ecef-dee2e6-ced4da-adb5bd-6c757d-495057-343a40-212529*/
+
 @import url('https://fonts.googleapis.com/css2?family=Gulzar&display=swap');
 
 @font-face {
@@ -21,8 +24,13 @@ html, head, body, div, button, a, h1, h2, table, tr, th, td, thead, tbody, tfoot
 
 body{
     height: 1200px;
-    background-color: antiquewhite;
+    background-color: #E9ECEF;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.header, .menu{
+    background-color: #ADB5BD;
+    box-shadow: .1em .1em .3em #343A40;
 }
 
 .header{
@@ -33,12 +41,9 @@ body{
     z-index: 100;
 
     min-height: 8em;
-    border: 2px groove rgb(200, 155, 90);
+    border: 2px groove #212529;
     border-bottom-left-radius: 0.4em;
     border-bottom-right-radius: 0.4em;
-
-    background-color: rgb(255, 215, 130);
-    box-shadow: .1em .1em .3em burlywood;
 
     font-size: 1.2em;
 }
@@ -48,13 +53,19 @@ body{
     min-height: 1em;
     padding: 0em 0em;
     margin: 0;
-    border-bottom: 1px groove rgb(200, 155, 90);
+    border-bottom: 1px groove #212529;
 
     text-align: center;
     text-transform: capitalize;
     text-decoration: none;
     font-size: 1.4em;
     font-family: 'Gulzar', serif;
+
+    transition-duration: 200ms;
+}
+
+.header h1:hover{
+    background-color: #CED4DA;
 }
 
 .header p{
@@ -85,10 +96,8 @@ body{
     z-index: 100;
     padding: 0;
     
-    border: 1px groove rgb(200, 155, 90);
+    border: 1px groove #212529;
     border-radius: 0.4em;
-    background-color: rgb(255, 215, 130);
-    box-shadow: .1em .1em .3em burlywood;
 }
 
 .menu button{
@@ -101,14 +110,14 @@ body{
     width: 5em;
 
     /*border: 1px outset rgb(200, 155, 90);*/
-    border-bottom: 1px solid rgb(200, 155, 90);
-    border-right: 1px solid rgb(200, 155, 90);
+    border-bottom: 1px solid #212529;
+    border-right: .8px solid #212529;
     border-radius: 0.6em;
     margin-top: .4em;
     margin-bottom: .2em;
 
-    transition-duration: 500ms;
-    background-color: antiquewhite;
+    transition-duration: 200ms;
+    background-color: #6C757D;
 }
 
 .button1{
@@ -127,12 +136,12 @@ body{
 }
 
 .button1:hover, .button2:hover{
-    background-color: white;
+    background-color: #CED4DA;
 }
 
 .button1:active, .button2:active{
     border-bottom: 0;
     border-right: 0;
-    border-top: 1px solid rgb(200, 155, 90);
-    border-left: 1px solid rgb(200, 155, 90);
+    border-top: 1px solid #212529;
+    border-left: .8px solid #212529;
 }
