@@ -24,7 +24,15 @@ class Table{
         return this._columns;
     }
 
+    #chooseRandomCell(){
+        let rowIndex=Math.floor(this.rows*Math.random());
+        let colIndex=Math.floor(this.columns*Math.random());
+        this.table.rows[rowIndex].cells[colIndex].style.color='red';
+    }
+
     async print(positionLeft, positionTop){
+        this.#chooseRandomCell();
+
         let table=this.table;
         table.style.position='absolute';
         table.style.left=positionLeft;
